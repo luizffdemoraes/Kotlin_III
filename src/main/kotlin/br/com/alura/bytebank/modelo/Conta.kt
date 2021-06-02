@@ -1,8 +1,8 @@
 package br.com.alura.bytebank.modelo
 
 //variavel global
-var totalContas = 0
-    private set
+//var totalContas = 0
+//    private set
 
 abstract class Conta(
     //uma classe conta vai ter uma variavel do tipo Cliente - Composicao conta compoe um cliente
@@ -11,12 +11,24 @@ abstract class Conta(
 ) {
     var saldo = 0.0
         protected set
-    var total = 0
+
+    //companion object
+    companion object  {
+        var total = 0
+            private set
+
+//        fun incrementa(){
+//            total++
+//        }
+
+    }
 
     //Comportamento similar ao contrutor secundario
     init {
         println("Criando conta")
-        totalContas++
+        Companion.total++
+//        totalContas++
+
     }
 
     fun deposita(valor: Double) {
@@ -43,10 +55,11 @@ class ContaCorrente(
 ) : Conta(
     titular = titular,
     numero = numero
-){
+) {
+
     override fun saca(valor: Double) {
         val valorComTaxa = valor + 0.1
-        if(this.saldo >= valorComTaxa){
+        if (this.saldo >= valorComTaxa) {
             this.saldo -= valorComTaxa
         }
     }
@@ -61,7 +74,7 @@ class ContaPoupanca(
     numero = numero
 ) {
     override fun saca(valor: Double) {
-        if(this.saldo >= valor){
+        if (this.saldo >= valor) {
             this.saldo -= valor
         }
     }
