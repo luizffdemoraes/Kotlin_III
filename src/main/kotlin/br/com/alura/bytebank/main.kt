@@ -24,6 +24,21 @@ fun main() {
 //    val clienteNovo = NovoCliente()
 
 
+    //objeto anonimo - menbros momento de utilização estrutura de objeto mais não quer implementação
+    val fran = object : Autenticavel {
+        val nome: String = "Fran"
+        val cpf: String = "111.111.111-11"
+        val senha: Int = 1000
+
+        override fun autentica(senha: Int) = this.senha == senha
+
+    }
+
+    val sistemaInterno = SistemaInterno()
+    sistemaInterno.entra(fran, senha = 1000)
+
+    println("nome do cliente ${fran.nome}")
+
     val alex = Cliente(
         nome = "Alex",
         cpf = "111.111.111.11",
