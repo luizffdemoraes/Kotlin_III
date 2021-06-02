@@ -1,20 +1,17 @@
-package modelo
+package br.com.alura.bytebank.modelo
 
-import modelo.FuncionarioAdmin
-
-class Gerente(
+class Diretor(
     nome: String,
     cpf: String,
     salario: Double,
-    senha: Int
-    //Herança reutilizar comportamentos
+    senha: Int,
+    val plr: Double
 ) : FuncionarioAdmin(nome = nome, cpf = cpf, salario = salario, senha = senha) {
 
 
     override val bonificacao: Double
         get() {
-            println("bonificação gerente")
-            return salario
+            println("bonificação diretor")
+            return salario + plr
         }
-
 }
