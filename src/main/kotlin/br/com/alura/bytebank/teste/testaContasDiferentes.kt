@@ -47,10 +47,10 @@ fun testaContasDiferentes() {
     println("saldo  poupanca após transferir para corrente: ${contaPoupanca.saldo}")
     println("saldo corrente após receber transferência: ${contaCorrente.saldo}")
 
-    println("titular ${contaCorrente.titular}")
+    println("titular ${contaCorrente.titular.nome}")
     println("nome do titular ${contaCorrente.titular.nome}")
     println("cpf do titular ${contaCorrente.titular.cpf}")
-    println("endereço do titular ${contaCorrente.titular.endereco}")
+    println("endereço do titular ${contaCorrente.titular.endereco.logradouro}")
 
 
 }
