@@ -19,7 +19,7 @@ fun testaCopiasEReferencias() {
         titular = Cliente(
             nome = "Maria",
             cpf = "888.888.888.88",
-            1234
+            senha = 1234
         ),
         numero = 1003
     )
