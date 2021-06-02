@@ -6,10 +6,10 @@ fun main() {
 //    println("Bem vindo ao Bytebank")
 //    testaComportamentosConta()
 //    testaFuncionarios()
-//    testaContasDiferentes()
+    testaContasDiferentes()
 //    testaCopiasEReferencias()
 //    testaFuncionarios()
-    testaAutenticacao()
+//    testaAutenticacao()
 
     val palavra: kotlin.String = ""
     //Mesma coisa com uso do alias

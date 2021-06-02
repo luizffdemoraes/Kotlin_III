@@ -1,7 +1,8 @@
 package br.com.alura.bytebank.modelo
 
 abstract class Conta(
-    var titular: String,
+    //uma classe conta vai ter uma variavel do tipo Cliente - Composicao conta compoe um cliente
+    var titular: Cliente,
     val numero: Int
 ) {
     var saldo = 0.0
