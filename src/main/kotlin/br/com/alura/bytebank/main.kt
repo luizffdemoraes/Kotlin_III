@@ -1,42 +1,32 @@
 package br.com.alura.bytebank
 
 import br.com.alura.bytebank.modelo.Endereco
+import testaFuncionarios
 
 fun main() {
-    println()
-    println(1)
-    println(1.0)
-    println(true)
-    println("teste")
 
     //sobrecarga implicita
     val endereco = Endereco(logradouro = "")
 
-    //impressão de objetos
-    println(endereco)
+    val objeto: Any = Any()
 
-    imprime()
+    //ao rodar em tempo de compilação em runtime ele vai se tornar object
+    //imprime(Any())
+    imprime(objeto)
+    imprime(Unit)
+
     imprime(1) //sobrecarga
     imprime(1.0) //sobrecarga
-    imprime(endereco)
+    val teste: Any = imprime(endereco)
+    println(teste)
+
+    testaFuncionarios()
 }
 
-//sobrecarga
-fun imprime(){
-
-}
-
-fun imprime(valor: Int){
-
-}
-
-fun imprime(valor: Double){
-
-}
-
-
-fun imprime(endereco: Endereco){
-
+//tudo é um objeto - Unit mesmo não devolvendo nada e considerado um objeto, tudo vai retornar pelo menos um objeto
+fun imprime(valor: Any) : Any{
+    println(valor)
+    return valor
 }
 
 
