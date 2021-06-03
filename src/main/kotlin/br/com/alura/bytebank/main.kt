@@ -1,33 +1,28 @@
 package br.com.alura.bytebank
 
 import br.com.alura.bytebank.modelo.Endereco
-import testaFuncionarios
 
 fun main() {
+    val endereco = Endereco(logradouro = "Rua Vergueiro", complemento = "Alura")
+    val enderecoNovo = Endereco(bairro = "Vila mariana", numero = 1000)
 
-    //sobrecarga implicita
-    val endereco = Endereco(logradouro = "")
 
-    val objeto: Any = Any()
 
-    //ao rodar em tempo de compilação em runtime ele vai se tornar object
-    //imprime(Any())
-    imprime(objeto)
-    imprime(Unit)
+    println(endereco.equals((endereco)))
 
-    imprime(1) //sobrecarga
-    imprime(1.0) //sobrecarga
-    val teste: Any = imprime(endereco)
-    println(teste)
+    println(endereco.hashCode())
+    println(enderecoNovo.hashCode())
+    //hashcode é uma forma de identificar o objeto todos objeto vai ter esse comportamento
 
-    testaFuncionarios()
+    println(endereco.toString())
+    println(enderecoNovo.toString())
+
+    println("${endereco.javaClass}@${Integer.toHexString(endereco.hashCode())}")
+
+
+
 }
 
-//tudo é um objeto - Unit mesmo não devolvendo nada e considerado um objeto, tudo vai retornar pelo menos um objeto
-fun imprime(valor: Any) : Any{
-    println(valor)
-    return valor
-}
 
 
 
